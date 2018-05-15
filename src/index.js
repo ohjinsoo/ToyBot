@@ -15,6 +15,9 @@ const FACEIT_KEY = process.env.FACEIT_KEY || null;
 const FACEIT_URL = process.env.FACEIT_URL || null;
 
 const CHANNEL_ID = process.env.CHANNEL_ID || null;
+
+console.log(" lul " + CHANNEL_ID);
+
 const ERROR_LOG_CHANNEL_ID = process.env.ERROR_LOG_CHANNEL_ID;
 
 // const COMMAND_PREFIX = process.env.COMMAND_PREFIX || '.';
@@ -84,6 +87,8 @@ const login = () => {
 
 client.on('ready', () => {
   Logger.log('DISCORD', 'READY', `Logged in as ${client.user.tag}!`);
+  const channel = client.channels.find('id', CHANNEL_ID);
+  channel.send('jinsoo is not gay');
 });
 
 login().then(() => {
